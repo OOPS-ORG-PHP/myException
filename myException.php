@@ -230,7 +230,10 @@ class myException extends Exception {
 
 	// {{{ (void) myErrorHandler ($errno, $errstr, $errfile, $errline)
 	/**
-	 * myException을 사용하기 위한 error handler
+	 * myException을 사용하기 위한 error handler.
+	 *
+	 * 이 method는 static으로 선언이 되어 있으므로,
+	 * myException::myErrorHandler() 과 같이 호출해야 한다.
 	 *
 	 * @access public
 	 * @return boolean
@@ -239,7 +242,7 @@ class myException extends Exception {
 	 * @param  string 에러가 발생한 파일 경로
 	 * @param  int    에러가 발생한 라인
 	 */
-	function myErrorHandler ($errno, $errstr, $errfile, $errline) {
+	static function myErrorHandler ($errno, $errstr, $errfile, $errline) {
 		if ( ! (error_reporting () & $errno) )
 			return;
 
