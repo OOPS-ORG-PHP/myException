@@ -12,6 +12,18 @@
  * @filesource
  */
 
+// {{{ constant
+/**
+ * defeine PHP FATAL error type
+ * @access public
+ * @name E_MY_FATAL
+ */
+define (
+	'E_MY_FATAL',
+	E_ERROR | E_USER_ERROR | E_PARSE | E_CORE_ERROR | E_COMPILE_ERROR | E_RECOVERABLE_ERROR
+);
+// }}}
+
 /**
  * 기본 myException Class
  *
@@ -110,7 +122,7 @@ class myException extends Exception {
 
 		return sprintf (
 			"%s: %s [%s:%d]",
-			$this->errStr ($e->getCode ()),
+			self::errStr ($e->getCode ()),
 			$e->getMessage (),
 			preg_replace ('!.*/!', '', $e->getFile ()),
 			$e->getLine ()
@@ -169,7 +181,7 @@ class myException extends Exception {
 	 * @return string
 	 * @param  int php error constants
 	 */
-	function errStr ($errno) {
+	static function errStr ($errno) {
 		switch ($errno) {
 			case 1 :
 				return 'E_ERROR';
@@ -254,10 +266,42 @@ class myException extends Exception {
 			case E_USER_DEPRECATED :
 				break;
 			default :
-				throw new Exception ($errstr, $errno);
+				throw new myException ($errstr, $errno);
 		}
 
 		return true;
+	}
+	// }}}
+
+	// {{{ (void) myShutdownHandler ($func = false) {
+	/**
+	 * Fatal error 처리를 위한 shutdown handler
+	 *
+	 * 이 method는 static으로 선언이 되어 있으므로,
+	 * myException::myShutdownHandler() 와 같이 호출해야 한다.
+	 *
+	 * @since 1.0.1
+	 * @access public
+	 * @return void
+	 * @param  string (optional) callback function
+	 */
+	static function myShutdownHandler ($func = false) {
+		$error = (object) error_get_last ();
+
+		if ( $error && ($error->type & E_MY_FATAL) ) {
+			$error->type = self::errStr ($error->type);
+
+			if ( ! $func ) {
+				printf ('%s: %s' . PHP_EOL, $error->type, $error->message);
+				echo '(' . PHP_EOL;
+				printf ('    [file] => %s' . PHP_EOL, $error->file);
+				printf ('    [line] => %s' . PHP_EOL, $error->line);
+				echo ')' . PHP_EOL;
+				#print_r ($error);
+			} else {
+				call_user_func ($func, $error);
+			}
+		}
 	}
 	// }}}
 }

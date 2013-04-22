@@ -18,6 +18,18 @@ if ( $ccwd == 'tests' ) {
 
 require_once 'myException.php';
 
+# E_ERROR를 myException에서 다루고 싶다면 다음을 처리하도록 한다.
+#error_reporting (E_ALL & ~E_DEPRECATED & ~E_STRICT & ~E_NOTICE & ~E_ERROR);
+#register_shutdown_function('myException::myShutdownHandler', 'fatal_error');
+#function fatal_error ($dump) {
+#	echo '::: Fatal Messages' . PHP_EOL;
+#	print_r ($dump);
+#}
+
+# PHP 자체의 에러를 myException에서 제어하고 싶다면 다음 라인의 주석을 풀어준다.
+set_error_handler('myException::myErrorHandler');
+
+
 class myEX {
 	function foo () {
 		try {
@@ -38,9 +50,6 @@ class myEX {
 		}
 	}
 }
-
-# PHP 자체의 에러를 myException에서 제어하고 싶다면 다음 라인의 주석을 풀어준다.
-#set_error_handler('myException::myErrorHandler');
 
 $m = new myEX;
 
