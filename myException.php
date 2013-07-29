@@ -34,7 +34,7 @@ define (
  * @license     BSD License
  * @version     $Id$
  * @link        http://pear.oops.org/package/myException
- * @example     pear_myException/tests/myext.php
+ * @example     pear_myException/trunk/tests/myexp.php
  */
 class myException extends Exception {
 	// {{{ properties
@@ -43,7 +43,7 @@ class myException extends Exception {
 	 */
 	/**
 	 * Previous exception
-	 * @var    object
+	 * @var    Exception
 	 */
 	private $prev = null;
 	/**
@@ -54,12 +54,12 @@ class myException extends Exception {
 	/**#@-*/
 	// }}}
 
-	// {{{ (object) myException::__construct ($message, $code, Exception $prev= null)
+	// {{{ (void) myException::__construct ($message, $code, Exception $prev= null)
 	/** 
 	 * myException class 초기화
 	 *
 	 * @access public
-	 * @return object
+	 * @return void
 	 * @param  string 에러 메시지
 	 * @param  string 에러 코드
 	 * @param  string 이전 예외 배열
@@ -75,12 +75,12 @@ class myException extends Exception {
 	}
 	// }}}
 
-	// {{{ (object) myException::Previous (void)
+	// {{{ (Exception) myException::Previous (void)
 	/**
 	 * __construct method의 3번째 인자값인 previous exception을 반환
 	 *
 	 * @access public
-	 * @return object exception object 
+	 * @return Exception prevous exception
 	 * @param  void
 	 */
 	function Previous () {
