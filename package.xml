@@ -11,10 +11,10 @@
 		<email>joungkyun@gmail.com</email>
 		<active>yes</active>
 	</lead>
-	<date>2013-04-22</date>
-	<time>18:48:39</time>
+	<date>2014-01-25</date>
+	<time>18:40:03</time>
 	<version>
-		<release>1.0.1</release>
+		<release>1.0.2</release>
 		<api>1.0.0</api>
 	</version>
 	<stability>
@@ -22,12 +22,11 @@
 		<api>stable</api>
 	</stability>
 	<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
-	<notes>* support php 5.4 for E_STRICT
-* add myShutdownHandler method
+	<notes>
 </notes>
 	<contents>
 		<dir name="/">
-			<file role="php" md5sum="be941ef1a8fd37d2592cadb65b2e5fad" name="myException.php" />
+			<file role="php" md5sum="eae997c12f7a14ea34cab5ae9dfd7831" name="myException.php" />
 		</dir>
 	</contents>
 	<dependencies>
@@ -42,6 +41,20 @@
 	</dependencies>
 	<phprelease />
 	<changelog>
+		<release>
+			<version>
+				<release>1.0.2</release>
+				<api>1.0.0</api>
+			</version>
+			<stability>
+				<release>stable</release>
+				<api>stable</api>
+			</stability>
+			<date>2014-01-25</date>
+			<license uri="http://www.opensource.org/licenses/bsd-license.php">BSD</license>
+			<notes>
+</notes>
+		</release>
 		<release>
 			<version>
 				<release>1.0.1</release>
