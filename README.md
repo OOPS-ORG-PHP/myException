@@ -1,4 +1,5 @@
 # myException pear package
+[![GitHub license](https://img.shields.io/badge/license-BSD-blue.svg)](https://raw.githubusercontent.com/Joungkyun/php-mysql-extention-wrapper/master/LICENSE)
 
 ## License
 
