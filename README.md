@@ -43,7 +43,9 @@ Get last release at https://github.com/OOPS-ORG-PHP/myException/releases and unc
 
 ## Usages
 
-Refence siste: http://pear.oops.org/docs/myException/myException.html (with Korean)
+Refence siste: http://pear.oops.org/docs/myException/myException.html
+
+reference is written by Korean. If you can't read korean, use [google translator](https://translate.google.com/translate?hl=ko&sl=ko&tl=en&u=http%3A%2F%2Fpear.oops.org%2Fdocs%2FmyException%2FmyException.html).
 
 ```php
 <?php
