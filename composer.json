@@ -1,0 +1,24 @@
+{
+	"name": "joungkyun/myexception",
+	"description": "This is extended php exception.",
+	"type": "library",
+	"keyword": [ "exception", "extended" ],
+	"homepage": "https://github.com/OOPS-ORG-PHP/myException",
+	"license": "BSD-2-Clause",
+	"author": [
+		{
+			"name": "JoungKyun Kim",
+			"email": "joungkyun@daum.net",
+			"homepage": "https://joungkyun.github.com"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/OOPS-ORG-PHP/myException/issues"
+	},
+	"autoload": {
+		"files": [ "myException.php" ]
+	},
+	"require": {
+		"php": ">=5.0.0"
+	}
+}
