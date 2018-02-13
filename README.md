@@ -3,7 +3,7 @@
 
 ## License
 
-Copyright (c) 2016 JoungKyun.Kim &lt;http://oops.org&gt; All rights reserved
+Copyright (c) 2018 JoungKyun.Kim &lt;http://oops.org&gt; All rights reserved
 
 This program is under BSD license
 
@@ -34,6 +34,31 @@ If you wnat to upgarde version:
 ```bash
 [root@host ~]$ pear upgrade oops/myException
 ```
+
+### 2. use composer
+
+1. first, make composer.json as follow:
+
+    ```json
+    {
+        "require": {
+            "joungkyun/myexception": "1.0.*"
+        }
+	}
+    ```
+
+2. and, install myException package
+
+    ```bash
+    [user@host project]$ php composer.phpt install
+    Loading composer repositories with package information
+    Updating dependencies (including require-dev)
+    Package operations: 1 install, 0 updates, 0 removals
+      - Installing joungkyun/myexception (1.0.1): Downloading (100%)
+    Writing lock file
+    Generating autoload files
+    [user@host project]$
+    ```
 
 
 ### 2. install by hand
