@@ -61,7 +61,7 @@ If you wnat to upgarde version:
     ```
 
 
-### 2. install by hand
+### 3. install by hand
 
 Get last release at https://github.com/OOPS-ORG-PHP/myException/releases and uncompress pakcage within PHP include_path.
 
