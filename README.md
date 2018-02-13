@@ -35,8 +35,33 @@ If you wnat to upgarde version:
 [root@host ~]$ pear upgrade oops/myException
 ```
 
+### 2. use composer
 
-### 2. install by hand
+1. first, make composer.json as follow:
+
+    ```json
+    {
+        "require": {
+            "joungkyun/myexception": "1.0.*"
+        }
+	}
+    ```
+
+2. and, install myException package
+
+    ```bash
+    [user@host project]$ php composer.phpt install
+    Loading composer repositories with package information
+    Updating dependencies (including require-dev)
+    Package operations: 1 install, 0 updates, 0 removals
+      - Installing joungkyun/myexception (1.0.1): Downloading (100%)
+    Writing lock file
+    Generating autoload files
+    [user@host project]$
+    ```
+
+
+### 3. install by hand
 
 Get last release at https://github.com/OOPS-ORG-PHP/myException/releases and uncompress pakcage within PHP include_path.
 
