@@ -1,8 +1,6 @@
 <?php
 /*
- * pear_myException test
- *
- * $Id$
+ * myException test
  */
 
 $iniget = function_exists ('___ini_get') ? '___ini_get' : 'ini_get';

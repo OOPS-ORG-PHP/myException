@@ -6,7 +6,7 @@
  * @category    Core
  * @package     myException
  * @author      JoungKyun.Kim <http://oops.org>
- * @copyright   (c) 2018 OOPS.org
+ * @copyright   (c) 2018, OOPS.org
  * @license     BSD License
  * @link        http://pear.oops.org/package/myException
  * @filesource
@@ -30,11 +30,11 @@ define (
  * @category    Core
  * @package     myException
  * @author      JoungKyun.Kim <http://oops.org>
- * @copyright   (c) 2018 OOPS.org
+ * @copyright   (c) 2018, OOPS.org
  * @license     BSD License
  * @version     $Id$
  * @link        http://pear.oops.org/package/myException
- * @example     pear_myException/trunk/tests/myexp.php
+ * @example     myException/tests/myexp.php
  */
 class myException extends Exception {
 	// {{{ properties
